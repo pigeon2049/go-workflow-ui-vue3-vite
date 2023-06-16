@@ -79,7 +79,7 @@
             />
             <EndNode />
             <AModal
-                :dialog.sync="viewModal"
+                v-model:dialog="viewModal"
             >
               <pre
                   style="font-family: Monaco,Menlo,Consolas,Bitstream Vera Sans Mono,monospace;font-size: 14px;"
