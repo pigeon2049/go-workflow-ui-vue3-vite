@@ -74,7 +74,7 @@ import ConditionRange from './condition-range.vue'
 import ConditionInputNumber from './condition-input-number.vue'
 import ConditionRangeBetween from './condition-range-between.vue'
 export default {
-  emits:['update:data'],
+  emits:['update:data','del'],
   components: {
     ConditionRange,
     ConditionInputNumber,
