@@ -24,7 +24,7 @@
         :key="index"
         :node="item"
         @addnode="addnode"
-        @delNode="delNode(item)"
+        @delNode="delNodeNow(item)"
         @delConditionNode="delConditionNode"
         @addConditionFactor="addConditionFactor"
     />
@@ -92,7 +92,7 @@ export default {
       addNewNode(node, this.node1, this.items)
       this.key++
     },
-    delNode (node) {
+    delNodeNow (node) {
       delNode(node, this.node1, this.items)
       this.key++
     },
