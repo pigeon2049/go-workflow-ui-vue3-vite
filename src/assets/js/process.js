@@ -89,7 +89,7 @@ export const addNode = (node, arr) => {
 }
 export const addNewNode = (newNode, node, arr) => {
   addNode(newNode, arr)
-  findParent(newNode, node)
+  findParent(newNode, node,0)
 }
 /**
  *
@@ -113,7 +113,10 @@ export const delNode = (nodeDel, node, arr) => {
 export const deleteNode = (nodeDel, node) => {
   var temp = node
   // 找到删除节点的父节点
-  while (temp != null) {
+  let maxLoopTime=1000;
+  let loopTimes=0;
+  while (temp != null && loopTimes<maxLoopTime) {
+    loopTimes=loopTimes+1;
     if (temp.nodeId === nodeDel.prevId) {
       // 将删除节点的子节点指向父节点
       if (nodeDel.childNode == null) {
@@ -128,7 +131,11 @@ export const deleteNode = (nodeDel, node) => {
     if (temp.childNode != null) temp = temp.childNode
   }
 }
-export const findParent = (newNode, node) => {
+export const findParent = (newNode, node,count) => {
+  count=count+1;
+  if (count>1000){
+    return
+  }
   if (node.nodeId === newNode.prevId) {
     if (node.childNode != null && node.childNode.nodeId != null) {
       node.childNode.prevId = newNode.nodeId
@@ -139,7 +146,7 @@ export const findParent = (newNode, node) => {
     return
   }
   if (node.childNode != null) {
-    return findParent(newNode, node.childNode)
+    return findParent(newNode, node.childNode,count)
   }
 }
 export const delConditionNode = (condNodeDel, node) => {
