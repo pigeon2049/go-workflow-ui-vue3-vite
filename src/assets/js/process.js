@@ -60,6 +60,7 @@ export const iteratorData = (resultArr, data) => {
         nodeId: temp.nodeId,
         name: temp.name,
         type: temp.type,
+        prevId: temp.prevId,
         properties: temp.properties
       }
       resultArr.push(item)
