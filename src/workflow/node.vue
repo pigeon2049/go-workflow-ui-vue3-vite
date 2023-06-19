@@ -8,7 +8,7 @@
     />
     <ConditionNode
         v-if="node.type === 'condition'"
-        :node.sync="node"
+        :node="node"
         @addnode="addnode"
         @delConditionNode="delConditionNode"
         @addConditionFactor="addConditionFactor"
