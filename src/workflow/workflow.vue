@@ -86,7 +86,7 @@
               >{{ JSON.stringify(data1.node, null, 4) }}</pre>
             </AModal>
             <ErrorsModal
-                :dialog.sync="errorsModal"
+                v-model:dialog="errorsModal"
                 :data="errors"
             />
           </div>
