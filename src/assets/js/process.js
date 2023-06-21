@@ -9,14 +9,7 @@ export const checkData = (data) => {
     switch (temp.type) {
       case 'start':
         break
-      case 'approver' || 'notifier':
-        if (!temp.properties) {
-          errors.push({
-            name: temp.name,
-            nodeId: temp.nodeId
-          })
-        }
-        break
+      case 'approver':
       case 'notifier':
         if (!temp.properties) {
           errors.push({
